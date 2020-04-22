@@ -36,7 +36,12 @@ class App extends Component {
     return (
       <div className="App">
         <h1>Covid-19 Tracker</h1>
-        <h1>New Confirmed: {global.NewConfirmed}</h1>
+        <h2>New Confirmed: {global.NewConfirmed}</h2>
+        <h2>Total Confirmed: {global.TotalConfirmed}</h2>
+        <h2>New Deaths: {global.NewDeaths}</h2>
+        <h2>Total Deaths: {global.TotalDeaths}</h2>
+        <h2>New Recovered: {global.NewRecovered}</h2>
+        <h2>Total REcovered: {global.TotalRecovered}</h2>
         <h3>Affected Countries</h3>
         <SearchBox placeholder='Search Countries' handleChange={this.handleChange}/>
         <CardList countries={filteredCountries} />
