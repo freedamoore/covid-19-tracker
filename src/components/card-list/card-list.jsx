@@ -7,7 +7,7 @@ export const CardList = (props) => {
     return(
         <div className="card-list">
         {
-          props.countries.map(country => (<Card key={country.Slug} country={country} />))
+          props.countries.map(country => (<Card key={country.ourid} country={country} />))
         }
         </div>
     );
