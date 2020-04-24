@@ -1,7 +1,9 @@
 .card-list{
-    width: 85vw;
+    padding-bottom: 3rem;
+    width: 80vw;
     margin: 0 auto;
     display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    grid-gap: 20px;
+    grid-template-columns: repeat(auto-fit, minmax(15rem, 1fr));
+    grid-gap: 3rem;
 }
+

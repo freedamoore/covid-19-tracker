@@ -1,0 +1,22 @@
+.items{
+    display: flex;
+    justify-content: space-between;
+    border-bottom: 1px solid lightgray;
+}
+
+.item-block {
+    width: 15%;
+    text-align: right;
+    
+    padding: 0.5rem;
+ }
+
+ .item-block:first-of-type{
+     width: 20%;
+     text-align: left;
+ }
+
+ .item-block:last-of-type{
+    width: 10%;
+    text-align: center;
+}

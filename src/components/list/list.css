@@ -1,0 +1,35 @@
+.stats-table {
+    padding: 0 3rem;
+    background-color:white;
+    min-width: 800px;
+  }
+
+  .item-headings {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid darkgrey;
+    
+  }
+
+  .header-block {
+    font-weight: bold;
+    text-align: right;
+    text-transform: capitalize;
+    padding: 1rem 0;
+    width: 15%;
+  }
+
+  .header-block:first-of-type{
+    text-align: left;
+    padding: 1rem 0.5rem;
+    width: 20%;
+  }
+  
+  .header-block:last-of-type{
+    width: 10%;
+    text-align: center;
+}
+  
+ 
