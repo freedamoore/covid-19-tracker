@@ -22,7 +22,8 @@ export const List = (props) => {
             (<ListItem key={country.ourid} 
                       country={country} 
                       globalCases={total_cases} 
-                      globalDeaths={total_deaths} 
+                      globalDeaths={total_deaths}
+                      handleViewClick={props.handleViewClick}
             />))
         }
         </div>

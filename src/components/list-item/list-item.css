@@ -5,9 +5,8 @@
 }
 
 .item-block {
-    width: 15%;
+    width: 17%;
     text-align: right;
-    
     padding: 0.5rem;
  }
 
@@ -19,4 +18,7 @@
  .item-block:last-of-type{
     width: 10%;
     text-align: center;
+    padding: 0.25rem;
+   
 }
+

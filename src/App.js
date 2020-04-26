@@ -3,6 +3,7 @@ import './App.css';
 import { CardList} from './components/card-list/card-list';
 import { List } from './components/list/list';
 import { SearchBox } from './components/search-box/search-box';
+import  {Popup} from './components/popup/popup';
 
 class App extends Component {
   
@@ -12,9 +13,12 @@ class App extends Component {
     this.state = {
       global: [],
       countries: [],
-      searchField: ''
+      searchField: '',
+      countryName:'',
+      countryCases: '',
+      countryDeaths: '',
+      timelineData: []
     };
-
   }
 
   componentDidMount(){
@@ -30,8 +34,16 @@ class App extends Component {
     this.setState({searchField: e.target.value});
   }
 
+  handleViewClick = (code, name, cases, deaths) => {
+    const url = 'https://api.thevirustracker.com/free-api?countryTimeline=' + code;
+    fetch(url)
+      .then(response => response.json())
+      //  .then(items => console.log(Object.entries(items.timelineitems[0])));
+      .then(items => this.setState({countryName: name, countryCases: cases, countryDeaths: deaths, timelineData: Object.entries(items.timelineitems[0])}));
+  }
+
   render(){
-    const { global, countries, searchField } = this.state;
+    const { global, countries, searchField, timelineData, countryName, countryCases, countryDeaths } = this.state;
 
     const filteredCountries = countries.filter(country => 
       (typeof country.title !== 'undefined')? 
@@ -49,8 +61,9 @@ class App extends Component {
             <h3>Affected Countries</h3>
             <SearchBox placeholder='Search Countries' handleChange={this.handleChange}/>
         </div>                      
-        <List countries={filteredCountries} global={global} />           
+        <List countries={filteredCountries} global={global} handleViewClick={this.handleViewClick}/>       
         <div className="footer">Built by <a href="https://freedamoore.github.io/" target="_blank" >Freeda Moore</a> for the ZTM coding_challenge-26 using the virus tracker API.</div>
+        <Popup timelineData={timelineData} countryName={countryName} countryCases={countryCases} countryDeaths={countryDeaths}/>
       </div>
     );
   }

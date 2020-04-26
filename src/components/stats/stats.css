@@ -1,0 +1,40 @@
+.stat-bar-container{
+    position: absolute; 
+    bottom: 0;
+    width: 5px;
+   
+    display: flex;
+}
+.stat-bar{
+    background-image: linear-gradient(to bottom right, var(--color-gradient-2), var(--color-gradient-1));
+    width: 100%;
+   
+    position: relative;
+}
+
+.inner-stat-bar{
+    background-image: linear-gradient(to bottom right, var(--color-gradient-4), var(--color-gradient-3));
+   
+    width: 100%;
+    position: absolute;
+    bottom: 0;
+}
+
+.timeline-date{
+    position: absolute;
+    width: 300px;
+    bottom: -40px;
+}
+
+.show-count{
+    /* color: black; */
+    font-weight: bold;
+    display: none;
+    position: absolute;
+    top: -20px;
+    z-index: 2;
+}
+
+.stat-bar:hover .show-count{
+   display:block;
+}

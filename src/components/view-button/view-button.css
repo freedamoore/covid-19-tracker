@@ -1,0 +1,15 @@
+.timeline-button {
+    background-image: linear-gradient(to bottom right, var(--color-gradient-1), var(--color-gradient-2));
+    border: none;
+    border-radius: 5px;
+    color: white;
+    padding: 0.3rem 1rem;
+    text-decoration: none;
+    display: inline-block;
+    margin: 0;
+}
+
+.timeline-button:hover{
+    cursor: pointer;
+    opacity: 0.6;
+}
