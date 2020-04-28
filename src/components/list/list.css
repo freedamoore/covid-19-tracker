@@ -1,7 +1,7 @@
 .stats-table {
     padding: 0 3rem;
     background-color:white;
-    min-width: 800px;
+    /* min-width: 800px; */
   }
 
   .item-headings {
@@ -49,6 +49,6 @@
 
 @media only screen and (max-width: 600px){
   .item-headings {
-      font-size: 80%;
+      font-size: 70%;
   }
 }
