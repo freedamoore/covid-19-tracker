@@ -14,7 +14,7 @@ export const List = (props) => {
           <div className="header-block"><span>Total Deaths</span></div>
           <div className="header-block"><span>% of Global Cases</span></div>
           <div className="header-block"><span>% of Global Deaths</span></div>
-          <div className="header-block"><span>Timeline</span></div>
+          <div className="header-block timeline-block"><span>Timeline</span></div>
         </div>
         <div className='list-items'>
         {

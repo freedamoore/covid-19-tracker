@@ -2,6 +2,7 @@
     display: flex;
     justify-content: space-between;
     border-bottom: 1px solid lightgray;
+    width: 100%;
 }
 
 .item-block {
@@ -22,3 +23,15 @@
    
 }
 
+@media only screen and (max-width: 1100px){
+    .timeline-block-item{
+      display: none;
+    }
+    
+  }
+
+  @media only screen and (max-width: 900px){
+    .items{
+        width: 80vw;
+    }
+  }

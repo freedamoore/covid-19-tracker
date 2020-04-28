@@ -32,4 +32,17 @@
     text-align: center;
 }
   
- 
+@media only screen and (max-width: 1100px){
+  .timeline-block{
+    display: none;
+  }
+}
+
+@media only screen and (max-width: 900px){
+  .stats-table{
+    padding: 0 1rem;
+  }
+  .item-headings{
+    width: 80vw;
+  }
+}

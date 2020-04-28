@@ -13,7 +13,7 @@ export const ListItem = ({country, globalCases, globalDeaths, handleViewClick}) 
         <div className='item-block'><span>{numberWithCommas(country.total_deaths)}</span></div>
         <div className='item-block'><span>{((country.total_cases / globalCases)*100).toFixed(1)}%</span></div>
         <div className='item-block'><span>{((country.total_deaths / globalDeaths)*100).toFixed(1)}%</span></div> 
-        <div className='item-block'><ViewButton countryName = {country.title} 
+        <div className='item-block timeline-block-item'><ViewButton countryName = {country.title} 
                                                 countryCode={country.code} 
                                                 countryCases={country.total_cases}
                                                 countryDeaths={country.total_deaths}
