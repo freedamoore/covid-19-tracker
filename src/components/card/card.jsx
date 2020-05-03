@@ -10,7 +10,7 @@ export const Card = ({title, count}) => (
     <div className='card-border'>
         <div className='card-container'>
             <h2>{title}</h2>
-            <p>{numberWithCommas(count)}</p>
+            <p>{count===undefined? 'Retrieving data...': numberWithCommas(count)}</p>
         </div>
     </div>
 );
