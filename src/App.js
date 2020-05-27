@@ -17,7 +17,8 @@ class App extends Component {
       countryName:'',
       countryCases: '',
       countryDeaths: '',
-      timelineData: []
+      timelineData: [],
+      apiDown: false
     };
   }
 
@@ -27,7 +28,8 @@ class App extends Component {
 
     Promise.all([fetch(globalStatsUrl), fetch(countryStatsUrl)])
     .then(([resultGlobal, resultCountry]) => { return Promise.all([resultGlobal.json(), resultCountry.json()])})
-    .then(items => this.setState({global: items[0].results[0], countries: Object.values(items[1].countryitems[0])}));
+    .then(items => this.setState({global: items[0].results[0], countries: Object.values(items[1].countryitems[0])}))
+    .catch(err => {console.log(err); this.setState({apiDown: true})} );
   }
 
   handleChange = e => {
@@ -43,19 +45,19 @@ class App extends Component {
   }
 
   render(){
-    const { global, countries, searchField, timelineData, countryName, countryCases, countryDeaths } = this.state;
+    const { global, countries, searchField, timelineData, countryName, countryCases, countryDeaths, apiDown } = this.state;
 
     const filteredCountries = countries.filter(country => 
       (typeof country.title !== 'undefined')? 
         country.title.toLowerCase().includes(searchField.toLowerCase()) 
         : null
       );
-
+      
     return (
       <div className="App">
         <div className="header">
           <h1>Covid-19 Tracker</h1>
-          <CardList global={global} />  
+          {apiDown? <h2 style={{color:"#e8308c",paddingBottom:"50px"}}>The API we retrieve our data from is down at the moment. Please try again later</h2>: <CardList global={global} />  }
         </div>
         <div className='sub-header'>
             <h3>Affected Countries</h3>
